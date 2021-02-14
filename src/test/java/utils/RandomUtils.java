@@ -4,6 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.sql.Timestamp;
 import java.time.Month;
+import java.time.format.TextStyle;
+import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -93,13 +95,13 @@ public class RandomUtils {
 
     public static String getRandomMonth() {
         int monthIndex = getRandomInt(1,12);
-        String month = Month.of(monthIndex).name();
+        String month = Month.of(monthIndex).getDisplayName(TextStyle.FULL, Locale.forLanguageTag("en"));
         return month;
     }
 
-    public static int getRandomYear() {
+    public static String getRandomYear() {
         Random rand = new Random();
-        return 1900+rand.nextInt(2020 - 1900 + 1);
+        return String.valueOf(1900+rand.nextInt(2020 - 1900 + 1));
     }
 
 }

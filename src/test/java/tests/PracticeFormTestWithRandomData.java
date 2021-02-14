@@ -23,7 +23,7 @@ public class PracticeFormTestWithRandomData {
     String hobby = getRandomHobby();
     String phoneNumber = getRandomPhoneTenDigits();
     String monthOfBirth = getRandomMonth();
-    int yearOfBirth = getRandomYear();
+    String yearOfBirth = getRandomYear();
     int dayOfBirth = getRandomInt(1,29);
     String subject = "Chemistry";
     String currentAddress = faker.address().fullAddress();
